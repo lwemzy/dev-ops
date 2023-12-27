@@ -5,14 +5,15 @@ pipeline {
         }
     }
     triggers {
-        pollSCM '*/5 * * * *'
+        pollSCM '* * * * *'
     }
     stages {
         stage('Build') {
             steps {
                 echo 'Building...'
                 sh '''
-                echo "doing build stuff"
+                echo "Runing Java Main application"
+                java Main.java
                 '''
             }
         }
